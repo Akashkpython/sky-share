@@ -120,7 +120,7 @@ export default function ReceiveCard() {
         <h2 className="text-lg font-semibold text-[#22C55E]">Receive Files</h2>
       </div>
 
-      {/* Code inputs */}
+      {/* Code inputs with Green Glance */}
       <p className="text-[#888888] text-sm mb-5">Enter the 4-digit code</p>
       <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6" onPaste={handlePaste}>
         {[0, 1, 2, 3].map((i) => (
@@ -133,7 +133,11 @@ export default function ReceiveCard() {
             value={code[i]}
             onChange={(e) => handleInput(i, e.target.value)}
             onKeyDown={(e) => handleKeyDown(i, e)}
-            className="w-14 h-[4.5rem] sm:w-16 sm:h-20 text-center text-2xl font-mono bg-[#111] border border-[#262626] rounded-xl text-white focus:border-[#22C55E] focus:outline-none transition-colors"
+            className={`w-14 h-[4.5rem] sm:w-16 sm:h-20 text-center text-2xl font-mono rounded-2xl transition-all duration-300 outline-none ${
+              code[i]
+                ? 'bg-gradient-to-b from-[#22C55E]/15 via-[#111111] to-[#22C55E]/5 border-2 border-[#22C55E] text-[#22C55E] shadow-[0_0_25px_rgba(34,197,94,0.35)] font-bold'
+                : 'bg-gradient-to-b from-[#22C55E]/[0.06] via-[#111111] to-[#22C55E]/[0.02] border border-[#22C55E]/35 text-white shadow-[0_0_15px_rgba(34,197,94,0.08)] hover:border-[#22C55E]/60 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] focus:border-2 focus:border-[#22C55E] focus:shadow-[0_0_30px_rgba(34,197,94,0.4)] focus:from-[#22C55E]/10'
+            }`}
             autoComplete="off"
           />
         ))}

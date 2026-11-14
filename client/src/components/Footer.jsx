@@ -13,7 +13,7 @@ export default function Footer() {
       <footer className="border-t border-[#262626] py-10 lg:py-14 mt-20 lg:mt-28">
         <div className="max-w-6xl mx-auto px-4 flex flex-col items-center gap-5">
           <span className="text-[#888888] text-sm lg:text-base font-bold tracking-[0.25em]">
-            SKY SHARE
+            SKY SHARE - Made by Akash K Kothari
           </span>
           <div className="flex flex-wrap justify-center items-center gap-4 text-[#888888] text-sm">
             <button

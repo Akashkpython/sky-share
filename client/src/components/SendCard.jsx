@@ -112,24 +112,24 @@ export default function SendCard() {
         <h2 className="text-lg font-semibold text-[#EF4444]">Send Files</h2>
       </div>
 
-      {/* Drag & Drop Zone */}
+      {/* Drag & Drop Zone with Red Glance */}
       {!uploading && (
         <div
           onDrop={handleDrop}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onClick={() => inputRef.current?.click()}
-          className={`border-2 border-dashed rounded-2xl p-8 md:p-10 text-center cursor-pointer transition-colors mb-5 ${
+          className={`border-2 border-dashed rounded-2xl p-8 md:p-10 text-center cursor-pointer transition-all duration-300 mb-5 ${
             dragging
-              ? 'border-[#22C55E] bg-[#22C55E]/5'
-              : 'border-[#262626] hover:border-[#444]'
+              ? 'border-[#EF4444] bg-[#EF4444]/15 shadow-[0_0_40px_rgba(239,68,68,0.35)] scale-[1.01]'
+              : 'border-[#EF4444]/35 bg-gradient-to-b from-[#EF4444]/[0.06] via-[#111111]/60 to-[#EF4444]/[0.02] shadow-[0_0_25px_rgba(239,68,68,0.08)] hover:border-[#EF4444]/70 hover:shadow-[0_0_35px_rgba(239,68,68,0.2)] hover:from-[#EF4444]/[0.09]'
           }`}
         >
-          <Upload className="w-8 h-8 mx-auto mb-3 text-[#EF4444]/40" />
-          <p className="text-sm text-[#888888]">
-            Drag & drop files here, or <span className="text-white underline underline-offset-2">browse</span>
+          <Upload className="w-8 h-8 mx-auto mb-3 text-[#EF4444] drop-shadow-[0_0_12px_rgba(239,68,68,0.45)] transition-transform group-hover:scale-110" />
+          <p className="text-sm text-[#bbbbbb]">
+            Drag & drop files here, or <span className="text-white underline underline-offset-2 hover:text-[#EF4444] transition-colors">browse</span>
           </p>
-          <p className="text-xs text-[#555] mt-2">
+          <p className="text-xs text-[#888888] mt-2">
             Up to 50 MB per file · Max 5 files
           </p>
           <input
