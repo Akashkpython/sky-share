@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://sky-share-fawn.vercel.app/sitemap.xml
