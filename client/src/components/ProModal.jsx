@@ -40,7 +40,7 @@ export default function ProModal({ open, onClose }) {
       const keyId =
         order.key_id ||
         import.meta.env.VITE_RAZORPAY_KEY_ID ||
-        'rzp_test_U04G7YBHssOTEC';
+        'rzp_test_U059FW6ytRCH8J';
 
       // Absolute image URL required by Razorpay iframe
       const logoUrl = `${window.location.origin}/logo-icon.png`;
