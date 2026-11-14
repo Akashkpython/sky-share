@@ -21,10 +21,10 @@ export default function Header() {
           <nav className="flex items-center gap-2.5 sm:gap-4">
             <button
               onClick={() => setProOpen(true)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-500/10 via-yellow-500/20 to-amber-500/10 text-amber-300 border border-amber-500/30 hover:border-amber-400 transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-500/10 via-yellow-500/20 to-amber-500/10 text-amber-300 border border-amber-500/30 hover:border-amber-400 transition-colors cursor-pointer"
             >
               <Sparkles className="w-3 h-3 text-amber-400" />
-              <span>PRO</span>
+              <span>PRO - Coming Soon</span>
             </button>
             <button
               onClick={() => setSupportOpen(true)}
