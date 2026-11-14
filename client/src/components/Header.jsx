@@ -60,8 +60,8 @@ export default function Header() {
           <div className="border-t border-[#262626] pt-4 space-y-2">
             <h3 className="text-white font-medium text-base">Good to know</h3>
             <ul className="space-y-1.5 text-[#999]">
-              <li>📁 Max <span className="text-white">500 MB</span> per file, up to <span className="text-white">10 files</span> per transfer.</li>
-              <li>⏰ Files auto-delete after <span className="text-white">24 hours</span>.</li>
+              <li>📁 Max <span className="text-white">50 MB</span> per file, up to <span className="text-white">5 files</span> per transfer.</li>
+              <li>⏰ Files auto-delete after <span className="text-white">15 minutes</span>.</li>
               <li>🔒 No account needed. No data stored permanently.</li>
               <li>📱 Works on desktop, tablet, and mobile.</li>
             </ul>

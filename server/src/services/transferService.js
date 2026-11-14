@@ -9,7 +9,7 @@ import env from '../config/env.js';
  */
 export async function createTransfer() {
   const transferId = crypto.randomUUID();
-  const ttl = env.TRANSFER_EXPIRY_HOURS * 3600;
+  const ttl = env.TRANSFER_EXPIRY_MINUTES * 60;
   const now = new Date();
   const expiresAt = new Date(now.getTime() + ttl * 1000);
 
@@ -92,7 +92,7 @@ export async function addFile(transferId, fileData) {
   transfer.files.push(fileData);
 
   const ttl = await redis.ttl(`transfer:${transferId}`);
-  await redis.set(`transfer:${transferId}`, JSON.stringify(transfer), 'EX', ttl > 0 ? ttl : env.TRANSFER_EXPIRY_HOURS * 3600);
+  await redis.set(`transfer:${transferId}`, JSON.stringify(transfer), 'EX', ttl > 0 ? ttl : env.TRANSFER_EXPIRY_MINUTES * 60);
 
   // Track storage usage
   if (fileData.size && fileData.size > 0) {
@@ -116,7 +116,7 @@ export async function completeTransfer(transferId) {
   transfer.status = 'ready';
 
   const ttl = await redis.ttl(`transfer:${transferId}`);
-  await redis.set(`transfer:${transferId}`, JSON.stringify(transfer), 'EX', ttl > 0 ? ttl : env.TRANSFER_EXPIRY_HOURS * 3600);
+  await redis.set(`transfer:${transferId}`, JSON.stringify(transfer), 'EX', ttl > 0 ? ttl : env.TRANSFER_EXPIRY_MINUTES * 60);
 
   return transfer;
 }

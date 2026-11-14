@@ -57,7 +57,7 @@ export default function Footer() {
           <h3 className="text-white font-medium text-base">Auto-deletion</h3>
           <p>
             All files and associated metadata are automatically and permanently
-            deleted after <span className="text-white">24 hours</span>. We do not retain copies.
+            deleted after <span className="text-white">15 minutes</span>. We do not retain copies.
           </p>
           <h3 className="text-white font-medium text-base">No tracking</h3>
           <p>
@@ -87,9 +87,9 @@ export default function Footer() {
           </p>
           <h3 className="text-white font-medium text-base">File limits</h3>
           <p>
-            Maximum file size is <span className="text-white">500 MB</span> per file, up
-            to <span className="text-white">10 files</span> per transfer. Transfers
-            expire after <span className="text-white">24 hours</span>.
+            Maximum file size is <span className="text-white">50 MB</span> per file, up
+            to <span className="text-white">5 files</span> per transfer. Transfers
+            expire after <span className="text-white">15 minutes</span>.
           </p>
         </div>
       </Modal>
@@ -104,7 +104,7 @@ export default function Footer() {
           <p>
             Upload files, get a 4-digit code, share it — that's it. No sign-ups,
             no accounts, no tracking. Your files are encrypted in cloud storage
-            and auto-deleted after 24 hours.
+            and auto-deleted after 15 minutes.
           </p>
           <h3 className="text-white font-medium text-base">Built with</h3>
           <ul className="list-disc list-inside space-y-1 text-[#999]">

@@ -4,11 +4,11 @@ import { deleteObjects } from '../config/r2.js';
 import { removeStorage } from '../services/storageService.js';
 
 /**
- * Start the hourly cleanup job to remove expired transfers.
+ * Start the periodic cleanup job to remove expired transfers.
  */
 export function startCleanupJob() {
-  // Run every hour at minute 0
-  cron.schedule('0 * * * *', async () => {
+  // Run every 5 minutes
+  cron.schedule('*/5 * * * *', async () => {
     console.log('Cleanup: starting scan for expired transfers...');
 
     let cursor = '0';
@@ -74,5 +74,5 @@ export function startCleanupJob() {
     }
   });
 
-  console.log('Cleanup job scheduled (runs every hour)');
+  console.log('Cleanup job scheduled (runs every 5 minutes)');
 }
