@@ -5,8 +5,9 @@ import Modal from './Modal';
 
 export default function SupportModal({ open, onClose }) {
   const [copied, setCopied] = useState(false);
-  const upiId = '8792284825@upi'; // Default UPI ID for Akash K
-  const upiPayUrl = `upi://pay?pa=${upiId}&pn=Akash%20K&cu=INR`;
+  const upiId = '8792284825@sbi';
+  const payeeName = 'AKASH K KOTHARI';
+  const upiPayUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&cu=INR`;
 
   const copyUpi = async () => {
     try {
@@ -40,34 +41,44 @@ export default function SupportModal({ open, onClose }) {
             <span className="text-[11px] text-[#666]">0% platform fees</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 pt-1">
-            {/* Real UPI QR Code */}
-            <div className="p-2.5 bg-white rounded-xl shrink-0 shadow-md">
-              <QRCodeSVG
-                value={upiPayUrl}
-                size={110}
-                level="M"
-                bgColor="#ffffff"
-                fgColor="#000000"
+          <div className="flex flex-col sm:flex-row items-center gap-5 pt-1">
+            {/* Real UPI QR Code from user */}
+            <div className="w-36 h-36 bg-white rounded-2xl p-2 shrink-0 shadow-lg border border-[#333] flex items-center justify-center overflow-hidden">
+              <img
+                src="/upi-qr.png"
+                alt="UPI QR - Akash K Kothari"
+                className="w-full h-full object-contain"
               />
             </div>
 
-            <div className="flex-1 w-full space-y-2 text-center sm:text-left">
-              <p className="text-xs text-[#999]">
-                Scan with any UPI app or copy the UPI ID directly:
-              </p>
+            <div className="flex-1 w-full space-y-2.5 text-center sm:text-left">
+              <div>
+                <p className="text-xs text-[#888]">Payee Name</p>
+                <p className="text-sm font-semibold text-white">{payeeName}</p>
+                <p className="text-[11px] text-[#666]">State Bank of India</p>
+              </div>
+
               <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-[#181818] border border-[#333]">
-                <span className="font-mono text-xs text-white select-all">{upiId}</span>
+                <span className="font-mono text-xs text-[#22C55E] select-all">{upiId}</span>
                 <button
                   onClick={copyUpi}
-                  className="flex items-center gap-1 text-xs text-[#22C55E] hover:text-[#4ade80] transition-colors ml-2"
+                  className="flex items-center gap-1 text-xs text-[#22C55E] hover:text-[#4ade80] transition-colors ml-2 cursor-pointer"
                 >
                   {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                   {copied ? 'Copied' : 'Copy'}
                 </button>
               </div>
+
+              {/* Direct UPI Intent Link for Mobile users */}
+              <a
+                href={upiPayUrl}
+                className="sm:hidden block w-full py-2 px-3 rounded-xl bg-[#22C55E]/10 border border-[#22C55E]/30 text-[#22C55E] text-xs font-semibold text-center hover:bg-[#22C55E]/20 transition-colors"
+              >
+                Open in GPay / PhonePe / Paytm
+              </a>
+
               <p className="text-[11px] text-[#666]">
-                Tip ₹20, ₹50, or whatever you feel like!
+                Tip ₹20, ₹50, ₹100 or whatever you feel like!
               </p>
             </div>
           </div>
