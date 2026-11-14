@@ -1,5 +1,7 @@
 import SendCard from '../components/SendCard';
 import ReceiveCard from '../components/ReceiveCard';
+import AdBanner from '../components/AdBanner';
+import AffiliatePerks from '../components/AffiliatePerks';
 
 export default function HomePage() {
   return (
@@ -14,6 +16,14 @@ export default function HomePage() {
         <SendCard />
         <ReceiveCard />
       </div>
+
+      {/* Sponsored Banner / Google AdSense Slot */}
+      <div className="w-full mt-8">
+        <AdBanner />
+      </div>
+
+      {/* Community & Affiliate Perks */}
+      <AffiliatePerks />
     </div>
   );
 }

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Modal from './Modal';
+import SupportModal from './SupportModal';
 
 export default function Footer() {
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [termsOpen, setTermsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [supportOpen, setSupportOpen] = useState(false);
 
   return (
     <>
@@ -13,7 +15,7 @@ export default function Footer() {
           <span className="text-[#888888] text-sm lg:text-base font-bold tracking-[0.25em]">
             SKY SHARE
           </span>
-          <div className="flex items-center gap-4 text-[#888888] text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-4 text-[#888888] text-sm">
             <button
               onClick={() => setPrivacyOpen(true)}
               className="hover:text-white transition-colors"
@@ -34,12 +36,23 @@ export default function Footer() {
             >
               About
             </button>
+            <span className="text-[#333]">·</span>
+            <button
+              onClick={() => setSupportOpen(true)}
+              className="hover:text-amber-300 text-amber-400/90 transition-colors flex items-center gap-1 font-medium"
+            >
+              <span>Support</span>
+              <span>☕</span>
+            </button>
           </div>
           <p className="text-[#555] text-xs">
             © 2026 Sky Share. All rights reserved.
           </p>
         </div>
       </footer>
+
+      {/* Support Modal */}
+      <SupportModal open={supportOpen} onClose={() => setSupportOpen(false)} />
 
       {/* Privacy Modal */}
       <Modal open={privacyOpen} onClose={() => setPrivacyOpen(false)} title="Privacy Policy">

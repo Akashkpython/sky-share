@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HelpCircle, Mail, Phone, Github, Linkedin, Instagram, ExternalLink } from 'lucide-react';
+import { HelpCircle, Mail, Phone, Github, Linkedin, Instagram, ExternalLink, Coffee, Sparkles } from 'lucide-react';
 import Modal from './Modal';
+import SupportModal from './SupportModal';
+import ProModal from './ProModal';
 
 export default function Header() {
   const [helpOpen, setHelpOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [supportOpen, setSupportOpen] = useState(false);
+  const [proOpen, setProOpen] = useState(false);
 
   return (
     <>
@@ -14,7 +18,21 @@ export default function Header() {
           <Link to="/" className="flex items-center">
             <img src="/logo.svg" alt="Sky Share" className="h-7 sm:h-8" />
           </Link>
-          <nav className="flex items-center gap-3 sm:gap-5">
+          <nav className="flex items-center gap-2.5 sm:gap-4">
+            <button
+              onClick={() => setProOpen(true)}
+              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-500/10 via-yellow-500/20 to-amber-500/10 text-amber-300 border border-amber-500/30 hover:border-amber-400 transition-colors cursor-pointer"
+            >
+              <Sparkles className="w-3 h-3 text-amber-400" />
+              <span>PRO</span>
+            </button>
+            <button
+              onClick={() => setSupportOpen(true)}
+              className="flex items-center gap-1 text-[#888888] text-sm hover:text-white transition-colors cursor-pointer"
+            >
+              <Coffee className="w-3.5 h-3.5 text-amber-400" />
+              <span className="hidden sm:inline">Support</span>
+            </button>
             <button
               onClick={() => setHelpOpen(true)}
               className="text-[#888888] text-sm hover:text-white transition-colors"
@@ -30,6 +48,12 @@ export default function Header() {
           </nav>
         </div>
       </header>
+
+      {/* Support / Donate Modal */}
+      <SupportModal open={supportOpen} onClose={() => setSupportOpen(false)} />
+
+      {/* Pro Modal */}
+      <ProModal open={proOpen} onClose={() => setProOpen(false)} />
 
       {/* Help Modal */}
       <Modal open={helpOpen} onClose={() => setHelpOpen(false)} title="How it works">
