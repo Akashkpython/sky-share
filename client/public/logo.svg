@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 36" fill="none">
+  <!-- Cloud icon -->
+  <path d="M8 24h16a6 6 0 0 0 1.2-11.88A7 7 0 0 0 12 13a7 7 0 0 0-.6 1.12A5 5 0 0 0 8 24z" fill="#22C55E" opacity="0.9"/>
+  <!-- Arrow up inside cloud -->
+  <path d="M18 15v6M15 17l3-3 3 3" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- SKY text -->
+  <text x="36" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#ffffff">SKY</text>
+  <!-- SHARE text -->
+  <text x="82" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#888888">SHARE</text>
+</svg>
+
