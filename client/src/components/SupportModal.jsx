@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Copy, Check, Heart, Coffee, ExternalLink, QrCode } from 'lucide-react';
+import { Copy, Check, Heart, Coffee, QrCode } from 'lucide-react';
 import Modal from './Modal';
 
 export default function SupportModal({ open, onClose }) {
@@ -88,30 +88,7 @@ export default function SupportModal({ open, onClose }) {
           </div>
         </div>
 
-        {/* Buy Me a Coffee / International */}
-        <div className="space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#888888]">
-            International / Card Support
-          </span>
-          <a
-            href="https://buymeacoffee.com/akashk"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between p-3.5 rounded-xl bg-[#141414] border border-[#262626] hover:border-amber-500/40 hover:bg-[#181818] transition-all group"
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-xl">☕</span>
-              <div className="text-left">
-                <p className="text-sm font-medium text-white group-hover:text-amber-300 transition-colors">
-                  Buy Me a Coffee
-                </p>
-                <p className="text-[11px] text-[#777]">Support with Credit/Debit Card or PayPal</p>
-              </div>
-            </div>
-            <ExternalLink className="w-4 h-4 text-[#555] group-hover:text-white transition-colors" />
-          </a>
-        </div>
-
+        {/* Bottom Note */}
         <div className="text-center pt-2 border-t border-[#222]">
           <p className="text-[11px] text-[#555] flex items-center justify-center gap-1">
             Made with <Heart className="w-3 h-3 text-[#EF4444] fill-current" /> by Akash K
