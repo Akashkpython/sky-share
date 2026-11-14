@@ -82,7 +82,7 @@ export default function SendCard() {
 
         <div className="p-3 bg-white rounded-2xl">
           <QRCodeSVG
-            value={`https://skyshare.app/receive?code=${code}`}
+            value={`${window.location.origin}/receive?code=${code}`}
             size={120}
             level="M"
             bgColor="#ffffff"
