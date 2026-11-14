@@ -63,4 +63,18 @@ export async function deleteTransfer(transferId) {
   return data;
 }
 
+export async function createPaymentOrder(amount, currency = 'INR', receipt) {
+  const { data } = await api.post('/api/create-order', {
+    amount,
+    currency,
+    receipt,
+  });
+  return data;
+}
+
+export async function verifyPayment(paymentData) {
+  const { data } = await api.post('/api/verify-payment', paymentData);
+  return data;
+}
+
 export default api;
