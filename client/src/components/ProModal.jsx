@@ -13,6 +13,7 @@ import {
   CreditCard,
   Crown,
   Flame,
+  Heart,
 } from 'lucide-react';
 import Modal from './Modal';
 import { createPaymentOrder, verifyPayment } from '../services/api';
@@ -347,6 +348,13 @@ export default function ProModal({ open, onClose }) {
               <p className="text-[10px] text-[#555]">
                 Supports Google Pay, PhonePe, Paytm, All Debit/Credit Cards & Netbanking
               </p>
+              <div className="pt-2 border-t border-[#1f1f1f] w-full text-center">
+                <p className="text-[11px] text-[#666] flex items-center justify-center gap-1.5">
+                  <span>Made with</span>
+                  <Heart className="w-3 h-3 text-[#EF4444] fill-current" />
+                  <span>by Akash K</span>
+                </p>
+              </div>
             </div>
           </div>
         )}
