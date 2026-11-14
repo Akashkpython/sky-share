@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from 'react';
 import { X } from 'lucide-react';
 
-export default function Modal({ open, onClose, title, children }) {
+export default function Modal({ open, onClose, title, children, maxWidth = "sm:max-w-md" }) {
   const handleKeyDown = useCallback(
     (e) => {
       if (e.key === 'Escape') onClose();
@@ -31,7 +31,7 @@ export default function Modal({ open, onClose, title, children }) {
       />
 
       {/* Panel */}
-      <div className="relative w-full sm:max-w-md bg-[#0a0a0a] border border-[#262626] rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col">
+      <div className={`relative w-full ${maxWidth} bg-[#0a0a0a] border border-[#262626] rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col`}>
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#262626]">
           <h2 className="text-lg font-semibold text-white">{title}</h2>
