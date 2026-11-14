@@ -71,3 +71,4 @@ export async function recalculateStorage() {
   await redis.set(STORAGE_KEY, String(totalBytes));
   return totalBytes;
 }
+
