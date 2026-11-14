@@ -41,13 +41,13 @@ export default function SupportModal({ open, onClose }) {
             <span className="text-[11px] text-[#666]">0% platform fees</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-5 pt-1">
-            {/* Real UPI QR Code from user */}
-            <div className="w-36 h-36 bg-white rounded-2xl p-2 shrink-0 shadow-lg border border-[#333] flex items-center justify-center overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-center gap-6 pt-2">
+            {/* Cropped Large High-Resolution UPI QR Code */}
+            <div className="w-44 h-44 sm:w-48 sm:h-48 bg-white rounded-2xl p-2.5 shrink-0 shadow-2xl border border-white/20 flex items-center justify-center">
               <img
                 src="/upi-qr.png"
                 alt="UPI QR - Akash K Kothari"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain block rounded-lg"
               />
             </div>
 
