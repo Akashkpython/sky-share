@@ -42,6 +42,9 @@ export default function ProModal({ open, onClose }) {
         import.meta.env.VITE_RAZORPAY_KEY_ID ||
         'rzp_test_U04G7YBHssOTEC';
 
+      // Absolute image URL required by Razorpay iframe
+      const logoUrl = `${window.location.origin}/logo-icon.png`;
+
       // Step 2: Open Razorpay Checkout Modal
       const options = {
         key: keyId,
@@ -49,7 +52,7 @@ export default function ProModal({ open, onClose }) {
         currency: order.currency || 'INR',
         name: 'Sky Share',
         description: 'Sky Share Pro Upgrade (1 Month)',
-        image: '/favicon.svg',
+        image: logoUrl,
         order_id: order.order_id,
         handler: async function (response) {
           try {
